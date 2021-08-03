@@ -3,3 +3,4 @@ Word
 Apple
 Bug
 Celery
+New
