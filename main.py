@@ -24,8 +24,18 @@ while True:
     elif response == 'c' or response == 'C':
         pass
 
+    # Adding word to the list
     elif response == 'a' or response == 'A':
-        pass
+        print("-------------------")
+        rf = open("vocabulary.txt", 'r')
+        contents = rf.read()
+        wf = open("vocabulary.txt", 'w')
+        print('\n')
+        word = input('Enter the word you want to add --> ')
+        wf.write(contents + word + '\n')
+        rf.close()
+        wf.close()
+        print("-------------------\n")
 
     elif response == 'd' or response == 'D':
         pass
