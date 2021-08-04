@@ -21,8 +21,20 @@ while True:
     elif response == 'q' or response == 'Q':
         break
 
+    # Checks if a word is available on your list or not
     elif response == 'c' or response == 'C':
-        pass
+        print("-------------------")
+        rf = open('vocabulary.txt', 'r')
+        contents = rf.readlines()
+        rf.close()
+        word = input("Enter the word you want to search --> ")
+        word = word.strip()
+        for line in contents:
+            if line.strip() == word:
+                print("Founded --> ", word)
+            elif line == contents[-1]:
+                print('Not founded --> ', word)
+        print("-------------------\n")
 
     # Adding word to the list
     elif response == 'a' or response == 'A':
@@ -42,6 +54,7 @@ while True:
         print("-------------------")
         rf = open('vocabulary.txt', 'r')
         contents = rf.readlines()
+        rf.close()
         wf = open('vocabulary.txt', 'w')
         word = input("Enter the word you want to delete --> ")
         word = word.strip()
