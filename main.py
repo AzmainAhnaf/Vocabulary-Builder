@@ -33,7 +33,7 @@ while True:
         contents = rf.readlines()
         rf.close()
 
-        word = input("Enter the word you want to search --> ")
+        word = input("Enter the word you want to search --> ").title()
         word = word.strip()
         
         # Checking input and comparing with list
@@ -55,7 +55,7 @@ while True:
 
         wf = open("vocabulary.txt", 'w')
         print('\n')
-        word = input('Enter the word you want to add --> ')
+        word = input('Enter the word you want to add --> ').title()
         
         # Adding the word
         wf.write(contents + word + '\n')
@@ -72,7 +72,7 @@ while True:
         rf.close()
         
         wf = open('vocabulary.txt', 'w')
-        word = input("Enter the word you want to delete --> ")
+        word = input("Enter the word you want to delete --> ").title()
         word = word.strip()
         
         # Deleting the word that user inputted
@@ -88,6 +88,10 @@ while True:
     f.close()
     f = open('vocabulary.txt', 'w')
     contents.sort()
+
+    # removing duplicates
+    contents = list(set(contents))
+    
     for line in contents:
         f.write(line[:-1] + '\n')
     f.close()
