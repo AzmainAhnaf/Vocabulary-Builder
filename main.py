@@ -18,6 +18,7 @@ while True:
         f.close()
         print("-------------------\n")
 
+    # Qutting the application
     elif response == 'q' or response == 'Q':
         break
 
@@ -63,3 +64,16 @@ while True:
                 wf.write(line[:-1] + "\n")
         wf.close()
         print("-------------------\n")
+    
+    # Sorting list
+    f = open('vocabulary.txt', 'r')
+    contents = f.readlines()
+    f.close()
+    f = open('vocabulary.txt', 'w')
+    contents.sort()
+    for line in contents:
+        f.write(line[:-1] + '\n')
+    f.close()
+
+    input("Press enter")
+    print('\n')
