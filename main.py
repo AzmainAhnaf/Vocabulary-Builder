@@ -10,9 +10,14 @@ while True:
     print('Press (q) to quit\n')
 
     response = input('--> ')
+    # Printing whole vocubalary list
     if response == 's' or response == 'S':
-        pass
-    
+        print("-------------------")
+        f = open('vocabulary.txt', 'r')
+        print(f.read())
+        f.close()
+        print("-------------------\n")
+
     elif response == 'q' or response == 'Q':
         break
 
