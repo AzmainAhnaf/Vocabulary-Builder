@@ -29,13 +29,24 @@ while True:
         print("-------------------")
         rf = open("vocabulary.txt", 'r')
         contents = rf.read()
+        rf.close()
         wf = open("vocabulary.txt", 'w')
         print('\n')
         word = input('Enter the word you want to add --> ')
         wf.write(contents + word + '\n')
-        rf.close()
         wf.close()
         print("-------------------\n")
 
+    # Deliting word from the list
     elif response == 'd' or response == 'D':
-        pass
+        print("-------------------")
+        rf = open('vocabulary.txt', 'r')
+        contents = rf.readlines()
+        wf = open('vocabulary.txt', 'w')
+        word = input("Enter the word you want to delete --> ")
+        word = word.strip()
+        for line in contents:
+            if line.strip() != word:
+                wf.write(line[:-1] + "\n")
+        wf.close()
+        print("-------------------\n")
