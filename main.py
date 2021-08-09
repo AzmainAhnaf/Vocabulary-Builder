@@ -1,5 +1,10 @@
+from os.path import exists
 from PyDictionary import PyDictionary
 dictionary = PyDictionary()
+
+# Checking if vocabulary.txt exists
+with open('vocabulary.txt') as file:
+    pass
 
 # Reusing some code for both the 'c' and the 'l' keyword
 def checkword(word, contents):
